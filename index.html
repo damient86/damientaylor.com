@@ -1,45 +1,118 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Damien Taylor</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta name="description" content="Damien Taylor — personal site." />
+
   <style>
+    :root{
+      --bg: #0b1220;
+      --card: #121a2a;
+      --text: #f3f6fb;
+      --muted:#cbd5e1;
+      --accent:#ff0000; /* YouTube red for a pop of colour */
+      --link:#60a5fa;
+      --ring: 0 0 0 3px rgba(96,165,250,.45);
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f7fafc; --card:#ffffff; --text:#0f172a; --muted:#475569; --link:#2563eb; }
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
     body {
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      background: #111827;
-      color: #f9fafb;
-      text-align: center;
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg); color: var(--text);
+      display: grid; place-items: center; padding: 24px;
     }
+
+    .wrap { width: 100%; max-width: 720px; }
     .card {
-      padding: 2rem;
-      border-radius: 12px;
-      background: #1f2937;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-      max-width: 480px;
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      padding: clamp(1.5rem, 3vw, 2.25rem);
     }
+
     h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
+      margin: 0 0 .5rem 0;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      letter-spacing: .3px;
     }
-    p {
-      font-size: 1.1rem;
-      margin: 0.5rem 0 0;
-      color: #d1d5db;
+    p.lead {
+      margin: 0 0 1.75rem 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2.4vw, 1.15rem);
+      line-height: 1.6;
+    }
+
+    .links {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 520px){
+      .links { grid-template-columns: 1fr 1fr; }
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
+      padding: 0.95rem 1.2rem;
+      text-decoration: none; border-radius: 12px; font-weight: 700;
+      border: 1px solid transparent; transition: transform .05s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
+      color: var(--text); background: #1f2937;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:focus-visible { outline: none; box-shadow: var(--ring); }
+
+    .btn-yt { background: var(--accent); }
+    .btn-yt:hover { filter: brightness(0.95); }
+    .btn-gh { background: #111827; border-color: #273146; }
+    .btn-gh:hover { background: #0b1220; }
+
+    .icon { width: 22px; height: 22px; display: inline-block; }
+    footer {
+      margin-top: 14px; text-align: center; color: var(--muted); font-size: .9rem;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>damientaylor.com</h1>
-    <p>Website coming soon.</p>
-  </div>
+  <main class="wrap">
+    <section class="card" aria-label="Introduction">
+      <h1>Damien Taylor</h1>
+      <p class="lead">
+          I'm passionate about preserving vintage audio, film, and computing technology while exploring how it can be reimagined with today's tools.
+      </p>
+
+      <div class="links" role="navigation" aria-label="Primary links">
+                <!-- YouTube -->
+        <a class="btn btn-yt" href="https://www.youtube.com/@RecordCouncil" target="_blank" rel="noopener noreferrer" aria-label="Visit my YouTube channel">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M23.5 6.2s-.2-1.6-.8-2.3c-.7-.8-1.5-.8-1.9-.9C17.9 2.5 12 2.5 12 2.5s-5.9 0-8.8.5c-.4 0-1.2.1-1.9.9C.7 4.6.5 6.2.5 6.2S0 8.1 0 10v1.9c0 1.9.5 3.8.5 3.8s.2 1.6.8 2.3c.7.8 1.7.7 2.1.8 1.6.2 6.6.5 8.6.5s5.9 0 8.8-.5c.4 0 1.2-.1 1.9-.9.6-.7.8-2.3.8-2.3s.5-1.9.5-3.8V10c0-1.9-.5-3.8-.5-3.8zM9.7 13.9V8.6l5.7 2.7-5.7 2.6z"/>
+          </svg>
+          YouTube
+        </a>
+        <!-- GitHub -->
+        <a class="btn btn-gh" href="https://github.com/damient86" target="_blank" rel="noopener noreferrer" aria-label="Visit my GitHub profile">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M12 .5A11.5 11.5 0 0 0 .5 12.3c0 5.2 3.4 9.6 8.2 11.1.6.1.8-.3.8-.6v-2c-3.3.8-4-1.5-4-1.5-.6-1.4-1.5-1.8-1.5-1.8-1.2-.8.1-.8.1-.8 1.3.1 2 .  1.4 2 . 1.4 1.2 2 3 1.4 3.7 1.1.1-.9.5-1.4.9-1.7-2.7-.3-5.6-1.4-5.6-6.2 0-1.4.5-2.5 1.3-3.4-.1-.3-.6-1.6.1-3.3 0 0 1-.3 3.4 1.3a11.6 11.6 0 0 1 6.1 0c2.4-1.6 3.4-1.3 3.4-1.3.7 1.7.3 3 .1 3.3.8.9 1.3 2 1.3 3.4 0 4.8-2.9 5.9-5.6 6.2.5.4 1 1.2 1 2.4v3.5c0 .3.2.7.8.6 4.8-1.5 8.2-5.9 8.2-11.1A11.5 11.5 0 0 0 12 .5Z"/>
+          </svg>
+          GitHub
+        </a>
+      </div>
+
+      <footer>
+        © <span id="year"></span> Damien Taylor
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    // set current year without blocking render
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
