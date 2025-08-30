@@ -89,6 +89,31 @@
     footer {
       margin-top: 14px; text-align: center; color: var(--muted); font-size: .9rem;
     }
+    #classicToggle {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  padding: 6px 12px;
+  font-family: 'Tahoma', 'Verdana', sans-serif;
+  font-size: 14px;
+  color: black;
+  background-color: #dcdcdc;
+  border: 2px outset #fff;
+  box-shadow: inset -1px -1px 0px #999, inset 1px 1px 0px #fff;
+  cursor: pointer;
+  text-decoration: none;
+  z-index: 9999;
+}
+
+#classicToggle:hover {
+  background-color: #c0c0c0;
+}
+
+#classicToggle:active {
+  border: 2px inset #999;
+  box-shadow: inset 1px 1px 0px #fff, inset -1px -1px 0px #999;
+}
+
   </style>
 </head>
 <body>
@@ -118,5 +143,6 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+  <a id="classicToggle" href="classic.html">Classic Mode</a>
 </body>
 </html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Damien Taylor Classic</title>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background-image: url("https://www.transparenttextures.com/patterns/old-wall.png"); /* change to tiled GIF if you like */
+      background-color: #f0f0f0;
+      font-family: "Courier New", monospace;
+      color: black;
+    }
+
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border: 3px double #0000cc;
+      padding: 16px;
+    }
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      filter: contrast(120%) saturate(80%);
+      border: 3px ridge #808080;
+      display: block;
+      margin: 0 auto 16px auto;
+    }
+
+    table.links {
+      width: 100%;
+      border: 2px solid #000000;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table.links td {
+      border: 1px solid #000000;
+      padding: 12px;
+      background-color: #e0e0ff;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    a {
+      color: #0000cc;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      background-color: yellow;
+    }
+
+    marquee {
+      font-weight: bold;
+      font-size: 18px;
+      color: red;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: #666;
+      margin-top: 20px;
+    }
+ 
+    #modernToggle {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  padding: 10px 16px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(to right, #3b82f6, #2563eb);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 9999;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#modernToggle:hover {
+  background: linear-gradient(to right, #2563eb, #1e40af);
+  transform: translateY(-1px);
+}
+
+#modernToggle:active {
+  transform: translateY(1px);
+}
+
+
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <marquee behavior="alternate">🚧 Welcome to Damien's Classic Web Zone! 🚧</marquee>
+
+    <center>
+      <img src="classic.jpg" alt="Damien Taylor" class="profile-pic">
+      <h2><font face="Verdana" color="#003366">Damien Taylor</font></h2>
+      <p><font size="3">
+        I’m passionate about vintage media, communication, and computing — and about finding ways to bring these into the modern world.
+      </font></p>
+    </center>
+
+    <table class="links">
+      <tr>
+        <td><a href="https://www.youtube.com/@RecordCouncil" target="_blank">Visit my YouTube Channel</a></td>
+      </tr>
+      <tr>
+        <td><a href="https://github.com/damient86" target="_blank">Check out my GitHub</a></td>
+      </tr>
+      <tr>
+        <td><a href="https://www.linkedin.com/in/damien-taylor-40a606225/" target="_blank">Connect on LinkedIn</a></td>
+      </tr>
+    </table>
+
+    <div class="footer">
+      <hr>
+      <p>&copy; <script>document.write(new Date().getFullYear())</script> Damien Taylor</p>
+      <p><i>This page best viewed in Netscape Navigator 4.0 at 800x600 resolution</i></p>
+    </div>
+  </div>
+  <a id="modernToggle" href="index.html">Back to the Future</a>
+</body>
+</html>
