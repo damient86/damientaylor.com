@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects — Damien Taylor</title>
+  <meta name="description" content="Selected projects by Damien Taylor" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+
+  <style>
+    :root{
+      --bg: #0b1220;
+      --card: #121a2a;
+      --text: #f3f6fb;
+      --muted:#cbd5e1;
+      --accent:#ff0000;
+      --link:#60a5fa;
+      --ring: 0 0 0 3px rgba(96,165,250,.45);
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f7fafc; --card:#ffffff; --text:#0f172a; --muted:#475569; --link:#2563eb; }
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg); color: var(--text);
+      display: grid; place-items: start center; padding: 24px;
+    }
+
+    .wrap { width: 100%; max-width: 960px; }
+
+    header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 18px;
+    }
+    header a { color: var(--link); text-decoration: none; font-weight: 700; }
+    header a:focus-visible { outline: none; box-shadow: var(--ring); }
+
+    h1 { margin: 0 0 .5rem 0; font-size: clamp(1.8rem, 4vw, 2.4rem); }
+    p.lead { margin: 0 0 1.5rem 0; color: var(--muted); }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+       .project {
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      padding: clamp(1rem, 2.5vw, 1.5rem);
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .project img {
+      width: 100%;
+      aspect-ratio: 4 / 3; 
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.25);
+      display: block;
+    }
+
+    .project h2 { margin: 0 0 .25rem 0; font-size: clamp(1.15rem, 2.4vw, 1.35rem); }
+    .project p { margin: 0; color: var(--muted); line-height: 1.6; }
+
+    .meta {
+      margin-top: .6rem;
+      font-size: .95rem;
+      display: flex; gap: 12px; flex-wrap: wrap; color: var(--muted);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1rem;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: transform .05s ease, box-shadow .2s ease, background .2s ease;
+      color: #fff;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:focus-visible { outline: none; box-shadow: var(--ring); }
+
+    .btn-yt { background: var(--accent); }
+    .btn-yt:hover { background: #cc0000; }
+    .btn-gh { background: #333; }
+    .btn-gh:hover { background: #222; }
+    .btn-live { background: #0a66c2; }
+    .btn-live:hover { background: #074380; }
+
+    footer { margin-top: 20px; text-align: center; color: var(--muted); font-size: .9rem; }
+
+    @media (max-width: 720px) {
+      .project { grid-template-columns: 1fr; text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <a href="../">← Back to home</a>
+    </header>
+
+    <h1>Projects</h1>
+    <p class="lead">Some of the things I've worked on.</p>
+
+    <section class="grid" aria-label="Project list">
+
+      <article class="project">
+        <img src="img/Speakingclock.jfif" alt="PMG Talking Clock web recreation thumbnail" Title="Talking clock image from Wikipedia">
+        <div>
+          <h2>PMG Talking Clock (1954–1990)</h2>
+          <p>A browser-based recreation of original the electro-mechanical Australian talking clock.</p>
+          <div class="meta">
+            <a class="btn btn-live" href="https://time.damientaylor.com" target="_blank" rel="noopener">Live Site</a>
+            <a class="btn btn-gh" href="https://github.com/damient86/pmgclock" target="_blank" rel="noopener">GitHub Repo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <img src="img/Telegraph_Sounder.JPG" alt="Web Morse client thumbnail" Title="Telegraph sounder image from Wikipedia">
+        <div>
+          <h2>Hardware Morse Trainer</h2>
+          <p>A modern web Koch Morse trainer capable of sending output to a serial attached telegraph sounder.</p>
+          <div class="meta">
+            <a class="btn btn-live" href="https://damient86.github.io/web-serial-morse-trainer/" target="_blank" rel="noopener">Live Site</a>
+            <a class="btn btn-gh" href="https://github.com/damient86/web-serial-morse-trainer" target="_blank" rel="noopener">GitHub Repo</a>
+          </div>
+        </div>
+      </article>
+
+     
+    </section>
+
+    <footer>
+      © <span id="year"></span> Damien Taylor
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

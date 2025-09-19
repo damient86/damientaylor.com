@@ -14,7 +14,7 @@
       --text: #f3f6fb;
       --muted:#cbd5e1;
       --accent:#ff0000; /* YouTube red */
-      --link:#60a5fa;
+      --link:#006108;
       --ring: 0 0 0 3px rgba(96,165,250,.45);
     }
     @media (prefers-color-scheme: light){
@@ -86,6 +86,13 @@
     .btn-li { background: #0a66c2; }
     .btn-li:hover { background: #074380; }
 
+    .btn-projects {
+  background: var(--link);
+}
+.btn-projects:hover {
+  background: #094e00; /* darker blue hover */
+}
+
     footer {
       margin-top: 14px; text-align: center; color: var(--muted); font-size: .9rem;
     }
@@ -119,10 +126,13 @@
 <body>
   <main class="wrap">
     <section class="card" aria-label="Introduction">
-      <img src="profile.jpg" alt="Damien Taylor" class="profile-pic">
+      <img src="img/profile.jpg" alt="Damien Taylor" class="profile-pic">
 
       <h1>Damien Taylor</h1>
       <p class="lead">I’m passionate about vintage media, communication and computing — and about finding ways to bring these into the modern world.</p>
+      <div style="margin-bottom:2.5rem;">
+  <a class="btn btn-projects" href="projects/">Projects</a>
+</div>
       <div class="links">
         <a class="btn btn-yt" href="https://www.youtube.com/@RecordCouncil" target="_blank" rel="noopener noreferrer">
           YouTube
